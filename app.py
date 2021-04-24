@@ -12,7 +12,7 @@ import math
 
 
 db = DB(dbname='energy_consumption_db', host='localhost', port=5432,
-user='postgres', passwd='9102')
+user='postgres', passwd='PASSWORD')
 
 # Retrieving  data¶ 
 p = db.query("SELECT * FROM population")
