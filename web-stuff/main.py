@@ -14,5 +14,9 @@ def about():
 def selector(): 
     return render_template("selector.html")
 
+@app.route("/plot_template")
+def plot_template(): 
+    return render_template("plot_template.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

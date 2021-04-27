@@ -692,7 +692,7 @@ body {
   .contact .info-box {
     color: white;
     text-align: center;
-    box-shadow: 0 0 30px grey;
+    /* box-shadow: 0 0 30px grey; */
     padding: 20px 0 30px 0;
     margin-bottom: 30px;
   }
@@ -705,7 +705,7 @@ body {
   }
   
   .contact .php-email-form {
-    box-shadow: 0 0 30px grey;
+    /* box-shadow: 0 0 30px grey; */
     padding: 30px;
     margin-bottom: 30px;
   }
