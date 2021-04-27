@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About this Project</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static',  filename='css/animate2.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/boxicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/swiper.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static',  filename='css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v4.1.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="gradient">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Energy</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li class="dropdown"><a href="{{ url_for('selector') }}"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About the Project</h2>
+          <ol>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li>About the Project</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{{url_for('static',   filename='img/windmills.jpg') }}" class="img-fluid" alt="Image of Windmills">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>What is this project about?</h3>
+            <hr>
+            <p class="fst-italic">
+              This project analyses the energy consumption of Australian states from the 2000 to 2018 
+              financial year and compares them to the GDP trends over this time period .
+            </p>
+            <p>
+              Combining the strengths of the project members, this interactive dashboard thoroughly 
+              analyses the trends between energy consumption and GDP of Australia. Various graphs and
+              plots will examine how energy usage has changed within the states of Australia and compare this with 
+              GDP data to evaluate any correlations 
+            </p>
+            <p>
+              Start exploring data <a href="{{ url_for('selector') }}"><u>here.</u></a>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section --> 
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <br>An interactive dashboard compiled by <a href="https://github.com/presitkaur/Energy-Consumption-Australia">Team Agile</a>
+        <br>University of Western Australia and Trilogy Education<br>
+        Data Analytics Bootcamp<br>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static',  filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/boostrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/purecounter.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/swiper-bundle.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/noframework.waypoints.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static',  filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
