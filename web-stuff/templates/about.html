@@ -14,16 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/animate2.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/boxicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/swiper.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Moderna - v4.1.0
@@ -40,14 +40,14 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>Energy</span></a></h1>
+        <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Energy</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active " href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="services.html"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="active " href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li class="dropdown"><a href="{{ url_for('selector') }}"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -80,7 +80,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>About the Project</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li>About the Project</li>
           </ol>
         </div>
@@ -94,7 +94,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/windmills.jpg" class="img-fluid" alt="Image of Windmills">
+            <img src="{{url_for('static',   filename='img/windmills.jpg') }}" class="img-fluid" alt="Image of Windmills">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <h3>What is this project about?</h3>
@@ -110,7 +110,7 @@
               GDP data to evaluate any correlations 
             </p>
             <p>
-              Start exploring data <a href="services.html"><u>here.</u></a>
+              Start exploring data <a href="{{ url_for('selector') }}"><u>here.</u></a>
             </p>
             </div>
           </div>
@@ -137,17 +137,16 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="{{ url_for('static',  filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/boostrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/purecounter.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/swiper-bundle.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/noframework.waypoints.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ url_for('static',  filename='js/main.js') }}"></script>
 
 </body>
 
