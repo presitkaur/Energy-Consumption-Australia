@@ -14,16 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/animate2.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/boxicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/swiper.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Moderna - v4.1.0
@@ -36,37 +36,37 @@
 <body class="gradient_plain">
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-      <div class="container d-flex justify-content-between align-items-center">
-  
-        <div class="logo">
-          <h1 class="text-light"><a href="index.html"><span>Energy</span></a></h1>
-        </div>
-  
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="active " href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="dropdown"><a href="services.html"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Energy</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li class="dropdown"><a href="{{ url_for('selector') }}"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
   
       </div>
     </header><!-- End Header -->
@@ -80,56 +80,13 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Explore Data</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li>Explore Data</li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Our Services Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section class="services">
-      <div class="container">
-
-        <div class="row">
-          <h2>Delve into Our Data</h2>
-          <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box icon-box-pink">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box icon-box-cyan">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-green">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-blue">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Services Section -->
 
     <!-- ======= Service Details Section ======= -->
     <section class="service-details">
@@ -139,7 +96,7 @@
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/service-details-1.jpg" alt="Plot 1">
+                <img src="{{url_for('static',   filename='img/best-plot-ever.png') }}" alt="Plot 1">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="#">Plot 1</a></h5>
@@ -150,7 +107,7 @@
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/service-details-2.jpg" alt="Plot 2">
+                <img src="{{url_for('static',   filename='img/best-plot-ever.png') }}" alt="Plot 2">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="#">Plot 2</a></h5>
@@ -162,7 +119,7 @@
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/service-details-3.jpg" alt="Plot 3">
+                <img src="{{url_for('static',   filename='img/best-plot-ever.png') }}" alt="Plot 3">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="#">Plot 3</a></h5>
@@ -173,7 +130,7 @@
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/service-details-4.jpg" alt="Plot 4">
+                <img src="{{url_for('static',   filename='img/best-plot-ever.png') }}" alt="Plot 4">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="#">Plot 4</a></h5>
@@ -205,17 +162,16 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="{{ url_for('static',  filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/boostrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/purecounter.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/swiper-bundle.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/noframework.waypoints.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ url_for('static',  filename='js/main.js') }}"></script>
 
 </body>
 
