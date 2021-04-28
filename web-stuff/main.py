@@ -89,13 +89,13 @@ def home():
 def about():
     return render_template("about.html")
 
-# @app.route("/selector")
-# def selector(): 
-#     return render_template("selector.html")
-
-@app.route("/mara")
+@app.route("/selector")
 def selector(): 
-    return render_template("mara.html")
+    return render_template("selector.html")
+
+@app.route("/plot_template")
+def plot_template(): 
+    return render_template("plot_template")
 
 @app.route("/api/pop")
 def pop():
