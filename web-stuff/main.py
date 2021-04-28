@@ -127,7 +127,6 @@ def about():
 def selector(): 
     return render_template("selector.html")
 
-
 @app.route("/plot_mara")
 def mara(): 
     return render_template("plot_mara.html")
