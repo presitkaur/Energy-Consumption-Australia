@@ -1,5 +1,16 @@
 // d3.csv("hairData.csv").then(function(hairData, err) {
 //   if (err) throw err;
+var allGroup = ["AUS","VIC","NSW","QLD","WA","SA","TAS","NT"]
+
+  //add options to the button
+  d3.select("#selectButton")
+   .selectAll('myOptions')
+      .data(allGroup)
+    .enter()
+      .append('option')
+    .text(function (d) { return d; })// text show in the menu
+    .attr("value", function (d) { return d;})// corresponding value returned
+
 
 function bubbleChart() {
     var width = 940;
@@ -39,8 +50,10 @@ function bubbleChart() {
   //   .domain(["Wood, woodwaste","LPG","Auto gasoline-leaded"," Auto gasoline-unleaded","Aviation gasoline ","Aviation turbine fuel"," Kerosene and Heating oil","Diesel","Fuel oil","Petroleum products nec "," Solvents b ","Lubricants and greases","Bitumen b","Natural gas","Town gas","Solar energy","Electricity","Liquid/Gas Biofuels"])
   //   .range(["#0074D9","#7FDBFF","#39CCCC","#3D9970","#AAAAAA","#D2B4DE","#28B463","#AF601A","#E6B0AA","#3498DB","#26C6DA","#FF1744","#8C9EFF ","#C6FF00","#651FFF","#FF80AB","#FFFF00","#FF6D00",]);
   // // function to read and store data in each node
+
+  
   function createNodes(fuelData) {
-    var maxSize = d3.max(fuelData, d => +d.y2018_19);
+    var maxSize = d3.max(fuelData, d => +d.AUS);
 
     // size burble based on area
     var radiusScale = d3.scaleSqrt()
@@ -50,7 +63,7 @@ function bubbleChart() {
     // use map to convert raw data into node data
     var myNodes = fuelData.map(d=> ({
       ...d,
-      radius:radiusScale(+d.y2018_19),
+      radius:radiusScale(+d.AUS),
       size: +d.y2018-19,
       x: Math.random() * 900,
       Y: Math.random() * 800
@@ -59,7 +72,10 @@ function bubbleChart() {
     }))
     return myNodes;
   }
-  
+  function update(selectedGroup) {
+    //create new data with selection
+    var dataFilter = data.map(funtion(d){return{value:d[selectedGroup]}})
+  }
 
     // Append svg to data
 
@@ -79,7 +95,7 @@ function bubbleChart() {
 
       // bind nodes data to circle  element
       var elements = svg.selectAll('.bubble')
-        .data(nodes,d => d.fuels_consumed)
+        .data()
         .enter()
         .append('g')  
       console.log(elements);
@@ -152,12 +168,12 @@ function bubbleChart() {
 // // return chart function from closure
  return chart;
 }
- // Step 1: Append tooltip div
- var toolTip = d3.select("#bubble")
- .append("div")
- .classed("tooltip", true);
+ // Step 1: Append tooltip div      
+//  var toolTip = d3.select(".bubble")
+//  .append("div")
+//  .classed("tooltip", true);
 
-// Step 2: Create "mouseover" event listener to display tooltip
+// // Step 2: Create "mouseover" event listener to display tooltip
 // bubbles.on("mouseover", function(d) {
 // toolTip.style("display", "block")
 //    .html(
@@ -190,21 +206,21 @@ function display(data) {
   
 
 // load data
-d3.csv('testfuel.csv').then(display);
+d3.csv('testfuel2.csv').then(display);
 
 
-bubbleChart.on("mouseover", function(d) {
-toolTip.style("display", "block")
-   .html(
-     `<strong>${(d.fuels_consumed)}<strong><hr>${d.y2018_19}
- pj`)
-   .style("left", d3.event.pageX + "px")
-   .style("top", d3.event.pageY + "px");
-})
-// Step 3: Create "mouseout" event listener to hide tooltip
-.on("mouseout", function() {
- toolTip.style("display", "none");
-});
+// bubbleChart.on("mouseover", function(d) {
+// toolTip.style("display", "block")
+//    .html(
+//      `<strong>${(d.fuels_consumed)}<strong><hr>${d.y2018_19}
+//  pj`)
+//    .style("left", d3.event.pageX + "px")
+//    .style("top", d3.event.pageY + "px");
+// })
+// // Step 3: Create "mouseout" event listener to hide tooltip
+// .on("mouseout", function() {
+//  toolTip.style("display", "none");
+// });
 
 // var chart = updateToolTip(chart)
 
