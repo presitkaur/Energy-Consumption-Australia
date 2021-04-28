@@ -1,23 +1,5 @@
 // https://github.com/chartjs/Chart.js
 // https://www.chartjs.org/docs/latest/axes/styling.html
-<<<<<<< HEAD
-function buildPlot() {
-    /* data route */
-    const url = "/api/popGb";
-    d3.json(url).then(function(response) {
-  
-      console.log(response);
-  
-      const data = response;
-  
-  
-         
-    });
-  }
-  
-  buildPlot();
-=======
-
 // Polar Charts ( Energy Consumed by AUS States)
 // Load the data as csv ( will be using json)
 d3.csv("/Data/population_gb.csv", function(data) {
@@ -82,4 +64,3 @@ ticks: {
 }
 
 });
->>>>>>> eda085cd33446bf605b61ec64c1d84ce84c75ee7
