@@ -127,6 +127,7 @@ def about():
 def selector(): 
     return render_template("selector.html")
 
+<<<<<<< HEAD
 @app.route("/plot_mara")
 def mara(): 
     return render_template("plot_mara.html")
@@ -145,6 +146,11 @@ def popGb():
     
     #Display the JSON on the page
     return popGb_json
+=======
+@app.route("/plot_template")
+def plot_template(): 
+    return render_template("plot_template")
+>>>>>>> 74bef8722539fe86cdc664ac53b48656928a7bb4
 
 @app.route("/api/pop")
 def pop():
