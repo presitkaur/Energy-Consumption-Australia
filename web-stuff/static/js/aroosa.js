@@ -3,7 +3,7 @@ const api_url = '/api/pop'
 async function getData(){
   const response = await fetch(api_url)
 const data = await response.json();
-// console.log(data)
+console.log(data)
 
 for (var i = 0; i < data.length; i++) {
   x = data[i].date;
