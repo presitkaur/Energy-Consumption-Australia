@@ -11,8 +11,8 @@ import json
 #Enter a try, except statement to extract the first table 
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "9102", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "[USERNAME]", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "[PASSWORD]", #your password for your user on pgAdmin
 
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
@@ -45,8 +45,8 @@ finally:
 #Enter a try, except statement to extract the first table 
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "9102", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "[USER]", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "[PASSWORD]", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
                                   database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
@@ -79,8 +79,8 @@ finally:
 #Enter a try, except statement to extract the first table 
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "9102", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "[USER]", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "[PASSWORD]", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
                                   database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
@@ -112,8 +112,8 @@ finally:
 #Going to repeat what we did above however, this time it is for the energy table in the database
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "9102", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "[USER]", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "[PASSWORD]", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
                                   database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
