@@ -1,8 +1,22 @@
-// https://github.com/chartjs/Chart.js
-// https://www.chartjs.org/docs/latest/axes/styling.html
-// Polar Charts ( Energy Consumed by AUS States)
-// Load the data as csv ( will be using json)
-d3.csv("/Data/population_gb.csv", function(data) {
+// get data  from "/api/popGb" in json format and display to template as chart
+// Endpoint '/api/popGb' population/Energyconsumption
+// #####################################################
+// create a function to get data from route (e.g popGB)
+// const api_url = '/api/popGb'
+// async function getData(){
+//   const response = await fetch(api_url)
+// const data = await response.json();
+// console.log(data)
+// }
+// getData();
+// ###################################################
+const api_url = '/api/popGb'
+async function getData(){
+  const response = await fetch(api_url)
+const data = await response.json();
+console.log(data)
+
+
   for (var i = 0; i < data.length; i++) {
   // data.date = data[i].date;
   data.energy_consumption = data[i].energy_consumption;
@@ -63,4 +77,5 @@ ticks: {
 });
 }
 
-});
+}
+getData();
