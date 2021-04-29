@@ -57,7 +57,7 @@ function bubbleChart() {
 
   
   function createNodes(fuelData) {
-    var maxSize = d3.max(fuelData, d => +d.AUS);
+    var maxSize = d3.max(fuelData, d => +d.y2018_19);
 =======
   function createNodes(fuelData) {
     var maxSize = d3.max(fuelData, d => +d.y2018_19);
@@ -71,31 +71,17 @@ function bubbleChart() {
     // use map to convert raw data into node data
     var myNodes = fuelData.map(d=> ({
       ...d,
-<<<<<<< HEAD
-      radius:radiusScale(+d.AUS),
+      radius:radiusScale(+d.y2018_19
+        ),
       size: +d.y2018-19,
       x: Math.random() * 900,
       Y: Math.random() * 800
     
-=======
-      radius:radiusScale(+d.y2018_19),
-      size: +d.y2018-19,
-      x: Math.random() * 900,
-      Y: Math.random() * 800
-
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
 
     }))
     return myNodes;
   }
-<<<<<<< HEAD
-  function update(selectedGroup) {
-    //create new data with selection
-    var dataFilter = data.map(funtion(d){return{value:d[selectedGroup]}})
-  }
-=======
   
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
 
     // Append svg to data
 
@@ -115,11 +101,7 @@ function bubbleChart() {
 
       // bind nodes data to circle  element
       var elements = svg.selectAll('.bubble')
-<<<<<<< HEAD
         .data()
-=======
-        .data(nodes,d => d.fuels_consumed)
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
         .enter()
         .append('g')  
       console.log(elements);
@@ -192,22 +174,13 @@ function bubbleChart() {
 // // return chart function from closure
  return chart;
 }
-<<<<<<< HEAD
  // Step 1: Append tooltip div      
 //  var toolTip = d3.select(".bubble")
-=======
-//  // Step 1: Append tooltip div
-//  var toolTip = d3.select("#bubble")
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
 //  .append("div")
 //  .classed("tooltip", true);
 
 // // Step 2: Create "mouseover" event listener to display tooltip
-<<<<<<< HEAD
 // bubbles.on("mouseover", function(d) {
-=======
-// bubbleChart.on("mouseover", function(d) {
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
 // toolTip.style("display", "block")
 //    .html(
 //      `<strong>${(d.fuels_consumed)}<strong><hr>${d.y2018_19}
@@ -224,7 +197,6 @@ let myBubbleChart = bubbleChart();
 function display(data) {
   myBubbleChart('#bubble', data);
 }
-<<<<<<< HEAD
 // bubbles.on("mouseover", function(d) {
 // toolTip.style("display", "block")
 //    .html(
@@ -255,12 +227,6 @@ d3.csv('testfuel2.csv').then(display);
 // .on("mouseout", function() {
 //  toolTip.style("display", "none");
 // });
-=======
-  
-
-// load data
-d3.csv('testfuel.csv').then(display);
->>>>>>> c12143671c19222bb90227565b54eeba46e903a8
 
 // var chart = updateToolTip(chart)
 
