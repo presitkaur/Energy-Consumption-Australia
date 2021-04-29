@@ -27,3 +27,7 @@ FROM population where date like '%2000-01'
 --   SELECT column(s)
 --   FROM table(s)
 --   [WHERE condition(s)];
+
+Create view PopulationJson as 
+SELECT array_to_json(array_agg(row_to_json (r))) FROM (
+    SELECT date, location, population,GDP,energy_consumption,GSP,lat,long FROM population) r;
