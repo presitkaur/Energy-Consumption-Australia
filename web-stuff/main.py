@@ -13,6 +13,40 @@ try:
     #The line of code below is psycopg2 connecting to the pgAdmin database
     connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
                                   password= "9102", #your password for your user on pgAdmin
+
+                                  host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
+                                  port = "5432", ##port number pgAdmin is on
+                                  database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
+
+    #This following line retrieves whatever is in the database specified above 
+    #"cursor_factor=RealDictCursor" ensures that the table headings come across when we do the next part 
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
+    
+    #Create a variable called "selection" and enter the string you would usually enter into pgAdmin to select a table 
+    selection = "SELECT * FROM population_gb"
+    
+    #Psycopg2 will go and connect to this table in the following with the ".execute()" function
+    cursor.execute(selection)
+    
+    #".fetchall()" will retrieve all the data in the table 
+    popGb = cursor.fetchall()
+    
+    #Convert the data obtained from about into a pandas dataframe. This will then be converted to a JSON script 
+    # when the app route is built later in the code 
+    popGb_df = pd.DataFrame(popGb)
+#error handling
+except (Exception, psycopg2.Error) as error : 
+    print ("Error", error)
+finally: 
+    if connection:
+        cursor.close()
+        connection.close()
+
+#Enter a try, except statement to extract the first table 
+try: 
+    #The line of code below is psycopg2 connecting to the pgAdmin database
+    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "9102", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
                                   database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
