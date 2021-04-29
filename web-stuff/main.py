@@ -11,11 +11,45 @@ import json
 #Enter a try, except statement to extract the first table 
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "[USER]", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "[PASSWORD]", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "9102", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
-                                  database = "[DATABASE NAME") ##database name where your tables are stored (eg. 'energy-consumption-aus)
+                                  database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
+
+    #This following line retrieves whatever is in the database specified above 
+    #"cursor_factor=RealDictCursor" ensures that the table headings come across when we do the next part 
+    cursor = connection.cursor(cursor_factory=RealDictCursor)
+    
+    #Create a variable called "selection" and enter the string you would usually enter into pgAdmin to select a table 
+    selection = "SELECT * FROM population_gb"
+    
+    #Psycopg2 will go and connect to this table in the following with the ".execute()" function
+    cursor.execute(selection)
+    
+    #".fetchall()" will retrieve all the data in the table 
+    popGb = cursor.fetchall()
+    
+    #Convert the data obtained from about into a pandas dataframe. This will then be converted to a JSON script 
+    # when the app route is built later in the code 
+    popGb_df = pd.DataFrame(popGb)
+#error handling
+except (Exception, psycopg2.Error) as error : 
+    print ("Error", error)
+finally: 
+    if connection:
+        cursor.close()
+        connection.close()
+
+
+#Enter a try, except statement to extract the first table 
+try: 
+    #The line of code below is psycopg2 connecting to the pgAdmin database
+    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "9102", #your password for your user on pgAdmin
+                                  host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
+                                  port = "5432", ##port number pgAdmin is on
+                                  database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
 
     #This following line retrieves whatever is in the database specified above 
     #"cursor_factor=RealDictCursor" ensures that the table headings come across when we do the next part 
@@ -44,11 +78,11 @@ finally:
 #Going to repeat what we did above however, this time it is for the energy table in the database
 try: 
     #The line of code below is psycopg2 connecting to the pgAdmin database
-    connection = psycopg2.connect(user = "[USER]", ##your username in pgAdmin (eg. 'postgres')
-                                  password= "[PASSWORD]", #your password for your user on pgAdmin
+    connection = psycopg2.connect(user = "postgres", ##your username in pgAdmin (eg. 'postgres')
+                                  password= "9102", #your password for your user on pgAdmin
                                   host = "127.0.0.1", ##local host of pgAdmin (this is the highlighted string of numbers in the URL bar when you have pgAdmin open)
                                   port = "5432", ##port number pgAdmin is on
-                                  database = "[DATABASE NAME]") ##database name where your tables are stored (eg. 'energy-consumption-aus)
+                                  database = "energy_consumption_db") ##database name where your tables are stored (eg. 'energy-consumption-aus)
     
     #This following line retrieves whatever is in the database specified above 
     #"cursor_factor=RealDictCursor" ensures that the table headings come across when we do the next part
@@ -89,13 +123,33 @@ def home():
 def about():
     return render_template("about.html")
 
-# @app.route("/selector")
-# def selector(): 
-#     return render_template("selector.html")
-
-@app.route("/mara")
+@app.route("/selector")
 def selector(): 
-    return render_template("mara.html")
+    return render_template("selector.html")
+
+@app.route("/plot_mara")
+def mara(): 
+    return render_template("plot_mara.html")
+
+@app.route("/api/popGb")
+def popGb():
+    #Extract the population dataframe and use the pandas ".to_json()" function to convert the 
+    # dataframe into a json object
+    result = popGb_df.to_json(orient="records") ##orient="records" means that it will be displayed like "[{column -> value}, … , {column -> value}]"
+    
+    #Parse the above to look like json format 
+    parsed = json.loads(result)
+    
+    #Apply formatting to return a better looking JSON
+    popGb_json = json.dumps(parsed, skipkeys = True, allow_nan = True, indent = 6) 
+    
+    #Display the JSON on the page
+    return popGb_json
+
+# @app.route("/plot_template")
+# def plot_template(): 
+#     return render_template("plot_template")
+# >>>>>>> 74bef8722539fe86cdc664ac53b48656928a7bb4
 
 @app.route("/api/pop")
 def pop():

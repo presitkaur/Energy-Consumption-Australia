@@ -1,6 +1,5 @@
 // https://github.com/chartjs/Chart.js
 // https://www.chartjs.org/docs/latest/axes/styling.html
-
 // Polar Charts ( Energy Consumed by AUS States)
 // Load the data as csv ( will be using json)
 d3.csv("/Data/population_gb.csv", function(data) {
@@ -27,10 +26,10 @@ datasets: [
   label: "Energy Consumption (PJ)",
   backgroundColor: [
   "#003f5c",
-  "#58508d",
+  "#386cb0",
   "#bc5090",
   "#ef5675",
-  "#ffa600",
+  "#7fc97f",
   "#ff764a",
   "#ffa600"
   ],
@@ -49,7 +48,7 @@ datasets: [
 options: {
 legend: {
 display: true,
-position: 'bottom'
+position: 'bottom',
 },
 title: {
 display: true,
@@ -62,7 +61,6 @@ ticks: {
   }}
 }
 });
-
 }
 
 });

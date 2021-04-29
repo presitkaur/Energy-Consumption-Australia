@@ -27,10 +27,10 @@ var myChart = new Chart(ctx, {
         label: "Energy Consumption (PJ)",
         backgroundColor: [
         "#003f5c",
-        "#58508d",
+        "#386cb0",
         "#bc5090",
         "#ef5675",
-        "#ffa600",
+        "#7fc97f",
         "#ff764a",
         "#ffa600"
         ],
