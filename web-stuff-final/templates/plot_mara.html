@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Plot</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- import script libraries   Chart (plot) and D3(connection)-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static',  filename='css/animate2.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/boxicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',  filename='css/swiper.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static',  filename='css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v4.1.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class=gradient>
+
+    <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Energy</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="active " href="{{ url_for('home') }}">Home</a></li>
+            <li class="dropdown"><a href="#"><span>Explore Data</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="{{ url_for('mara') }}">Average Consumption (State)</a></li>
+                <li><a href="{{ url_for('aroosa') }}">Economic vs Consumption</a></li>
+                <li><a href="{{ url_for('praveena') }}">Fuel Type</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+  
+      </div>
+    </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Our Services Section ======= -->
+    <!-- <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Average Energy Consumption (State)</h2>
+          <ol>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li>Average Energy Consumption (State)</li>
+          </ol>
+        </div>
+
+      </div>
+    </section> -->
+
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500"> 
+      <div class="container">
+
+        <div class="row">
+
+
+          <div class="col-lg-5">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <h2>Average Energy Consumption by State </h2> 
+                  <p>
+                    Australian Population as well as the Gross State Product (GSP) for each state have
+                    grown over the years, so has energy consumption
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-8">
+            <div class="row">
+              <div class="info-box">
+              <canvas id="plots" width="800" height="800" ></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div> 
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <br>An interactive dashboard compiled by <a href="https://github.com/presitkaur/Energy-Consumption-Australia">Team Agile</a>
+        <br>University of Western Australia and Trilogy Education<br>
+        Data Analytics Bootcamp<br>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static',  filename='js/plots/mara.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/boostrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/purecounter.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/swiper-bundle.js') }}"></script>
+  <script src="{{ url_for('static',  filename='js/noframework.waypoints.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static',  filename='js/main.js') }}"></script>
+
+  
+  <!-- import script libraries   Chart (plot) and D3(connection)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</body>
+
+</html>
